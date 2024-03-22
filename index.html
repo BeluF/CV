@@ -1128,9 +1128,6 @@
       }
     }
 
-    /**
-     * Easy event listener function
-     */
     const on = (type, el, listener, all = false) => {
       let selectEl = select(el, all)
       if (selectEl) {
@@ -1142,16 +1139,12 @@
       }
     }
 
-    /**
-     * Easy on scroll event listener 
-     */
+
     const onscroll = (el, listener) => {
       el.addEventListener('scroll', listener)
     }
 
-    /**
-     * Navbar links active state on scroll
-     */
+  
     let navbarlinks = select('#navbar .scrollto', true)
     const navbarlinksActive = () => {
       let position = window.scrollY + 200
@@ -1169,9 +1162,6 @@
     window.addEventListener('load', navbarlinksActive)
     onscroll(document, navbarlinksActive)
 
-    /**
-     * Scrolls to an element with header offset
-     */
     const scrollto = (el) => {
       let elementPos = select(el).offsetTop
       window.scrollTo({
@@ -1180,9 +1170,6 @@
       })
     }
 
-    /**
-     * Back to top button
-     */
     let backtotop = select('.back-to-top')
     if (backtotop) {
       const toggleBacktotop = () => {
@@ -1196,18 +1183,13 @@
       onscroll(document, toggleBacktotop)
     }
 
-    /**
-     * Mobile nav toggle
-     */
+  
     on('click', '.mobile-nav-toggle', function (e) {
       select('body').classList.toggle('mobile-nav-active')
       this.classList.toggle('bi-list')
       this.classList.toggle('bi-x')
     })
 
-    /**
-     * Scrool with ofset on links with a class name .scrollto
-     */
     on('click', '.scrollto', function (e) {
       if (select(this.hash)) {
         e.preventDefault()
@@ -1223,9 +1205,7 @@
       }
     }, true)
 
-    /**
-     * Scroll with ofset on page load with hash links in the url
-     */
+
     window.addEventListener('load', () => {
       if (window.location.hash) {
         if (select(window.location.hash)) {
@@ -1234,9 +1214,7 @@
       }
     });
 
-    /**
-     * Hero type effect
-     */
+ 
     const typed = select('.typed')
     if (typed) {
       let typed_strings = typed.getAttribute('data-typed-items')
@@ -1250,9 +1228,6 @@
       });
     }
 
-    /**
-     * Skills animation
-     */
     let skilsContent = select('.skills-content');
     if (skilsContent) {
       new Waypoint({
@@ -1267,9 +1242,7 @@
       })
     }
 
-    /**
-     * Porfolio isotope and filter
-     */
+
     window.addEventListener('load', () => {
       let portfolioContainer = select('.portfolio-container');
       if (portfolioContainer) {
@@ -1297,16 +1270,11 @@
 
     });
 
-    /**
-     * Initiate portfolio lightbox 
-     */
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
 
-    /**
-     * Portfolio details slider
-     */
+
     new Swiper('.portfolio-details-slider', {
       speed: 400,
       loop: true,
@@ -1321,9 +1289,7 @@
       }
     });
 
-    /**
-     * Testimonials slider
-     */
+
     new Swiper('.testimonials-slider', {
       speed: 600,
       loop: true,
@@ -1350,9 +1316,6 @@
       }
     });
 
-    /**
-     * Animation on scroll
-     */
     window.addEventListener('load', () => {
       AOS.init({
         duration: 1000,
@@ -1362,9 +1325,6 @@
       })
     });
 
-    /**
-     * Initiate Pure Counter 
-     */
     new PureCounter();
 
   })()
@@ -1379,10 +1339,10 @@
         <img src="assets/img/fotocv.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Belén Fornari</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://github.com/BeluF" class="gthub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/belen-fornari/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="mailto:ma.belen.fornari@gmail.com" class="gmail"><i class="bi bi-envelope-fill"></i></a>
-          <a href="https://wa.me/+543435332833" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://github.com/BeluF" class="gthub" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/belen-fornari/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://mailto:ma.belen.fornari@gmail.com" class="gmail" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://wa.me/+543435332833" class="whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
 
         </div>
       </div>
@@ -1397,6 +1357,8 @@
               <span>Skills</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
               <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-briefcase-alt-2"></i>
+              <span>Portfolio</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
               <span>Contact</span></a></li>
         </ul>
@@ -1459,8 +1421,8 @@
               </div>
             </div>
             <p><i> I'm a passioned growing web developer, experienced in design, execution and maintenance of web apps.
-              I yearning to still growing in this scope, learning from my coworkers and helping them to learn from me. 
-            </i></p>
+                I yearning to still growing in this scope, learning from my coworkers and helping them to learn from me.
+              </i></p>
           </div>
         </div>
       </div>
@@ -1672,6 +1634,31 @@
 
       </div>
     </section>
+    <section id="portfolio" class="skills section-bg contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p></p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="portfolio">
+                <i class='bx bx-git-branch'></i>
+                <h4>GitHub:</h4>
+                <p><a href="https://github.com/BeluF" target="_blank" rel="noopener noreferrer">Here</a> you can see all my proyects</p>
+
+              </div>
+              <br>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <div class="container">
 
@@ -1687,7 +1674,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <a href="mailto:ma.belen.fornari@gmail.com">ma.belen.fornari@gmail.com</a>
+                <a href="https://mailto:ma.belen.fornari@gmail.com" target="_blank" rel="noopener noreferrer">ma.belen.fornari@gmail.com</a>
 
               </div>
               <br>
@@ -1700,12 +1687,10 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <a href="wa.me/543435332833">+54 343 533-2833</a>
+                <a href="https://wa.me/543435332833" target="_blank" rel="noopener noreferrer">+54 343 533-2833</a>
               </div>
             </div>
           </div>
-
-
         </div>
 
       </div>
